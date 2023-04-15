@@ -1,4 +1,4 @@
-// C program to convert Roman Numerals to Integers
+// C program to convert Roman Numerals to Decimal numbers 
 
 
 
