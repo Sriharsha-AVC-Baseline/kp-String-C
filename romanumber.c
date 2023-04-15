@@ -1,79 +1,53 @@
+// C program to convert Roman Numerals to Integers
+
+
+
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
 
-
+int values(char c)
+{
+    char val[] = {'l','V','X','L','C','D','M'};
+    int numval[]={1,5,10,50,100,500,1000};
+    int i=0;
+    for(i=0;i<7;i++)
+    {
+        if(c==val[i])
+        {
+            return numval[i];
+        }
+    }
+}
 
 int roman_to_number(char* rmn)
 {
-    int number=0;
-    int singles=0;
-    int v=0,x=0,l=0,c=0,m=0;
-    int len=strlen(rmn)-1,i;
-    for(i=0;i<len;i++)
-    {
-        if(rmn[i]=='l' && singles<3)
-        {
-            number++;
-            singles++;
-        }
-        if(rmn[i]=='V')
-        {
-            if(singles==1)
+   int i=0,len=strlen(rmn);
+   int number=values(rmn[0]),singles=0,recent=values(rmn[0]);
+   for(i=1;i<len-1;i++)
+   {
+        int prev=values(rmn[i-1]);
+            if(prev < values(rmn[i]))
             {
-                number=number+3;
-                singles=0;
-                continue;
+                number=number -prev +(values(rmn[i])-prev);
             }
-            number=number+5;
-            v++;
-        }
-        else if(rmn[i]=='X' && v==0)
-        {
-            if(singles==1)
+            else
             {
-                number=number+8;
-                singles=0;
-                continue;
+                number=values(rmn[i])+number;
             }
-            number=number+10;
-            x++;
-        }
-        else if(rmn[i]=='L'&& x==0)
-        {
-            if(singles==1)
-            {
-                number=number+48;
-                singles=0;
-                continue;
-            }
-            number=number+50;
-            l++;
-        }
-        else if(rmn[i]=='C'&& l==0)
-        {
-            if(singles==1)
-            {
-                number=number+98;
-                singles=0;
-                continue;
-            }
-            number=number+100;
-        }
 
-    }
-    return number;
+            printf("%d\t",number);
+        
+      recent=values(rmn[i]);
+   }
+   return number;
 }
 int main()
 {
     char strng[100];
     fgets(strng,100,stdin);
-    if(strng[0]>=48&&strng[0]<=57)
-    {
-          
-    }
-    else
-    {
+    
+    
     printf("%d\n",roman_to_number(strng));
-    }
+    
 }
