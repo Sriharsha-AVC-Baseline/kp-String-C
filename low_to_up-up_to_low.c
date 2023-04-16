@@ -1,3 +1,4 @@
+// This program will convert lower case letters to Upper case and Vice verse
 #include<stdio.h>
 #include<String.h>
 #include<stdlib.h>
