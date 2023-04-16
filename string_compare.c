@@ -1,3 +1,4 @@
+// This program will compare two strings and prints whether the strings are equal or not equal without using strcmp 
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
