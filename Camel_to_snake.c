@@ -1,3 +1,5 @@
+// This program convert the CamelCase String Format to snake_case
+
 #include<stdio.h>
 #include<String.h>
 #include<stdlib.h>
