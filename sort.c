@@ -24,6 +24,5 @@ int main()
     printf("Enter the String\n");
     char str[200];
     fgets(str,200,stdin);
-    printf("Enter the character for frequency\n");
     sort(str);
 }
