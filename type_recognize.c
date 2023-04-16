@@ -1,3 +1,4 @@
+// This program will scan entire line and extract the integer , float and String data types presetnt in the line...
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
